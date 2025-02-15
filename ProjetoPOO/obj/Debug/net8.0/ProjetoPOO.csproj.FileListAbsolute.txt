@@ -1,0 +1,15 @@
+/workspaces/ClinicaVeterinaria/ProjetoPOO/bin/Debug/net8.0/ProjetoPOO
+/workspaces/ClinicaVeterinaria/ProjetoPOO/bin/Debug/net8.0/ProjetoPOO.deps.json
+/workspaces/ClinicaVeterinaria/ProjetoPOO/bin/Debug/net8.0/ProjetoPOO.runtimeconfig.json
+/workspaces/ClinicaVeterinaria/ProjetoPOO/bin/Debug/net8.0/ProjetoPOO.dll
+/workspaces/ClinicaVeterinaria/ProjetoPOO/bin/Debug/net8.0/ProjetoPOO.pdb
+/workspaces/ClinicaVeterinaria/ProjetoPOO/obj/Debug/net8.0/ProjetoPOO.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/ClinicaVeterinaria/ProjetoPOO/obj/Debug/net8.0/ProjetoPOO.AssemblyInfoInputs.cache
+/workspaces/ClinicaVeterinaria/ProjetoPOO/obj/Debug/net8.0/ProjetoPOO.AssemblyInfo.cs
+/workspaces/ClinicaVeterinaria/ProjetoPOO/obj/Debug/net8.0/ProjetoPOO.csproj.CoreCompileInputs.cache
+/workspaces/ClinicaVeterinaria/ProjetoPOO/obj/Debug/net8.0/ProjetoPOO.sourcelink.json
+/workspaces/ClinicaVeterinaria/ProjetoPOO/obj/Debug/net8.0/ProjetoPOO.dll
+/workspaces/ClinicaVeterinaria/ProjetoPOO/obj/Debug/net8.0/refint/ProjetoPOO.dll
+/workspaces/ClinicaVeterinaria/ProjetoPOO/obj/Debug/net8.0/ProjetoPOO.pdb
+/workspaces/ClinicaVeterinaria/ProjetoPOO/obj/Debug/net8.0/ProjetoPOO.genruntimeconfig.cache
+/workspaces/ClinicaVeterinaria/ProjetoPOO/obj/Debug/net8.0/ref/ProjetoPOO.dll

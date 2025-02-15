@@ -1,31 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/home/isaac/Desktop/ClinicaVeterinaria/ProjetoPOO/ProjetoPOO.csproj": {}
+    "/workspaces/ClinicaVeterinaria/ProjetoPOO/ProjetoPOO.csproj": {}
   },
   "projects": {
-    "/home/isaac/Desktop/ClinicaVeterinaria/ProjetoPOO/ProjetoPOO.csproj": {
+    "/workspaces/ClinicaVeterinaria/ProjetoPOO/ProjetoPOO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/isaac/Desktop/ClinicaVeterinaria/ProjetoPOO/ProjetoPOO.csproj",
+        "projectUniqueName": "/workspaces/ClinicaVeterinaria/ProjetoPOO/ProjetoPOO.csproj",
         "projectName": "ProjetoPOO",
-        "projectPath": "/home/isaac/Desktop/ClinicaVeterinaria/ProjetoPOO/ProjetoPOO.csproj",
-        "packagesPath": "/home/isaac/.nuget/packages/",
-        "outputPath": "/home/isaac/Desktop/ClinicaVeterinaria/ProjetoPOO/obj/",
+        "projectPath": "/workspaces/ClinicaVeterinaria/ProjetoPOO/ProjetoPOO.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/ClinicaVeterinaria/ProjetoPOO/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/isaac/.nuget/NuGet/NuGet.Config"
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net9.0"
+          "net8.0"
         ],
         "sources": {
-          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -38,12 +37,11 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "imports": [
             "net461",
             "net462",
@@ -60,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

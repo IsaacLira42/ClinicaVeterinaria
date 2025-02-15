@@ -1,0 +1,14 @@
+/home/isaac/Desktop/ClinicaVeterinaria/ProjetoPOO/bin/Debug/net9.0/ProjetoPOO
+/home/isaac/Desktop/ClinicaVeterinaria/ProjetoPOO/bin/Debug/net9.0/ProjetoPOO.deps.json
+/home/isaac/Desktop/ClinicaVeterinaria/ProjetoPOO/bin/Debug/net9.0/ProjetoPOO.runtimeconfig.json
+/home/isaac/Desktop/ClinicaVeterinaria/ProjetoPOO/bin/Debug/net9.0/ProjetoPOO.dll
+/home/isaac/Desktop/ClinicaVeterinaria/ProjetoPOO/bin/Debug/net9.0/ProjetoPOO.pdb
+/home/isaac/Desktop/ClinicaVeterinaria/ProjetoPOO/obj/Debug/net9.0/ProjetoPOO.GeneratedMSBuildEditorConfig.editorconfig
+/home/isaac/Desktop/ClinicaVeterinaria/ProjetoPOO/obj/Debug/net9.0/ProjetoPOO.AssemblyInfoInputs.cache
+/home/isaac/Desktop/ClinicaVeterinaria/ProjetoPOO/obj/Debug/net9.0/ProjetoPOO.AssemblyInfo.cs
+/home/isaac/Desktop/ClinicaVeterinaria/ProjetoPOO/obj/Debug/net9.0/ProjetoPOO.csproj.CoreCompileInputs.cache
+/home/isaac/Desktop/ClinicaVeterinaria/ProjetoPOO/obj/Debug/net9.0/ProjetoPOO.dll
+/home/isaac/Desktop/ClinicaVeterinaria/ProjetoPOO/obj/Debug/net9.0/refint/ProjetoPOO.dll
+/home/isaac/Desktop/ClinicaVeterinaria/ProjetoPOO/obj/Debug/net9.0/ProjetoPOO.pdb
+/home/isaac/Desktop/ClinicaVeterinaria/ProjetoPOO/obj/Debug/net9.0/ProjetoPOO.genruntimeconfig.cache
+/home/isaac/Desktop/ClinicaVeterinaria/ProjetoPOO/obj/Debug/net9.0/ref/ProjetoPOO.dll

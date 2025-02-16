@@ -6,11 +6,12 @@ namespace ProjetoPOO.Models
     {
         public string Nome { get; private set; }
         public string Email { get; private set; }
-        private string Senha { get; set; }
+        public string Senha { get; private set; }
         public int NivelAcesso { get; private set; }
 
-        public Usuario(string nome, string email, string senha, int nivel)
+        public Usuario(int id, string nome, string email, string senha, int nivel)
         {
+            Id = id;
             Nome = nome;
             Email = email;
             Senha = senha;

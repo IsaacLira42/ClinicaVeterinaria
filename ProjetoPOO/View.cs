@@ -17,9 +17,29 @@ namespace ProjetoPOO
             persistencia.Inserir(obj);
         }
 
-        public static void RemoverEntidade<T>(T obj) where T : ModeloId
+        public static void RemoverEntidade<T>(int id) where T : ModeloId
         {
-            
+            var persistencia = new PersistenciaGenerica<T>();
+            persistencia.Excluir(id);
         }
+
+        public static void ListarEntidade<T>() where T : ModeloId
+        {
+            var persistencia = new PersistenciaGenerica<T>();
+            persistencia.Listar();  // ira retornar uma lista
+        }
+
+        public static void ListarEntidadePorId<T>(int id) where T : ModeloId
+        {
+            var persistencia = new PersistenciaGenerica<T>();
+            persistencia.ListarPorId(id);
+        }
+
+        public static void AtualizarEntidade<T>(T obj) where T : ModeloId
+        {
+            var persistencia = new PersistenciaGenerica<T>();
+            persistencia.Atualizar(obj);
+        }
+
     }
 }

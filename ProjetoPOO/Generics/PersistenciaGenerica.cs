@@ -11,7 +11,6 @@ namespace ProjetoPOO.Generics
         // Criar o Caminho para o Banco de Dados!
         string caminho = Path.Combine("/workspaces/ClinicaVeterinaria/Database", $"{typeof(T).Name}.json");
 
-
         public void Inserir(T obj)
         {
             Abrir();

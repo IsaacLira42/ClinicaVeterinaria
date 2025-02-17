@@ -1,25 +1,40 @@
 using System;
+using ProjetoPOO.Models;
 
 
 namespace ProjetoPOO.Templates
 {
-    class Login
+    public class Login
     {
-        public static void ShowTelaLogin()
+        public void ShowTelaLogin()
         {
-            Console.WriteLine("===== TELA DE LOGIN =====");
-            Console.WriteLine(); // Pular linha
+            List<Admin> admins = View.ListarEntidade<Admin>();
+            List<Funcionario> funcionarios =  View.ListarEntidade<Funcionario>();
 
-            Console.Write("Usuario: ");
-            string usuario = Console.ReadLine();
-            
-            Console.WriteLine(); // Pular linha
+            Console.WriteLine("=== Sistema de Login ===");
+            Console.Write("Email: ");
+            string email = Console.ReadLine();
 
             Console.Write("Senha: ");
             string senha = Console.ReadLine();
 
-            /// Validar o usuario
-            View.ValidarUsuario(usuario, senha);
+            if (Sessao.Login(admins, funcionarios, email, senha))
+            {
+                Console.WriteLine($"\nBem-vindo, {Sessao.UsuarioLogado.Nome}!");
+
+                if (Sessao.ObterNivelAcesso() == 3)
+                {
+                    MenuAdmin.ShowMenuAdmin();
+                }
+                else if (Sessao.ObterNivelAcesso() == 2)
+                {
+                    MenuFuncionario.ShowMenuFuncionarios();
+                }
+            }
+            else
+            {
+                Console.WriteLine("\nEmail ou senha incorretos.");
+            }
         }
     }
 }

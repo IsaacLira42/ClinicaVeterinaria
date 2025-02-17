@@ -2,7 +2,7 @@ using System;
 
 namespace ProjetoPOO.Models
 {
-    class Cliente : Usuario
+    public class Cliente : Usuario
     {
         public string Telefone { get; set; }
         public string Endereco { get; set; }

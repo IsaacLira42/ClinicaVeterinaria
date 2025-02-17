@@ -2,7 +2,7 @@ using System;
 
 namespace ProjetoPOO.Models
 {
-    class Funcionario : Usuario
+    public class Funcionario : Usuario
     {
         public string Cargo { get; set; }
         public float Salario { get; set; }

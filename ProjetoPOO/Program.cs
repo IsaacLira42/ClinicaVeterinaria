@@ -7,8 +7,8 @@ namespace ProjetoPOO
     {
         public static void Main()
         {
-            //Login.ShowTelaLogin();
-            MenuAdmin.ShowMenuAdmin();
+            var login = new Login();
+            login.ShowTelaLogin();
         }
     }
 }

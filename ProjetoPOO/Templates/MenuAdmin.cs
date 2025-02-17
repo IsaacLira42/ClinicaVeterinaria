@@ -18,7 +18,6 @@ namespace ProjetoPOO.Templates
             Console.WriteLine("|  5. Opções de Agendamento    |");
             Console.WriteLine("|  6. Opções do Pet            |");
             Console.WriteLine("|  7. Opções de Servico        |");
-            Console.WriteLine("|  0. Sair                     |");
             Console.WriteLine("|                              |");
             Console.WriteLine("================================");
             Console.WriteLine(); // Pular linha

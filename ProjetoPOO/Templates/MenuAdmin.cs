@@ -33,6 +33,8 @@ namespace ProjetoPOO.Templates
                 case 3: OpcoesFuncionario(); break;
                 case 4: OpcoesPagamento(); break;
                 case 5: OpcoesAgendamento(); break;
+                case 6: OpcoesPet(); break;
+                case 7: OpcoesServico(); break;
                 default: 
                     Console.WriteLine("Opção Inválida, aperte qualquer teclha para tentar novamente.");
                     Console.ReadLine();
@@ -93,12 +95,12 @@ namespace ProjetoPOO.Templates
                         Console.WriteLine("Lista de Administradores:");
                         foreach (var admin in admins)
                         {
-                            Console.WriteLine($"ID: {admin.Id} | Nome: {admin.Nome} | Email: {admin.Email}");
+                            Console.WriteLine($"{admin.ToString()}");
                         }
                     } else { Console.WriteLine("Nenhum administrador encontrado."); }
 
                     Console.WriteLine("\nPressione qualquer tecla para continuar...");
-                    Console.ReadKey();
+                    Console.ReadLine();
                     OpcoesAdmin();
                     break;
                 case 4: // Listar administrador por ID
@@ -134,7 +136,7 @@ namespace ProjetoPOO.Templates
                     string senha_atualizar = Console.ReadLine();
 
                     Admin obj_atualizar = new Admin(id_atualizar, nome_atualizar, email_atualizar, senha_atualizar, 3);
-                    View.AtualizarEntidade<Admin>(obj_atualizar); 
+                    View.AtualizarEntidade<Admin>(obj_atualizar);
                     break;
                 default: 
                     Console.WriteLine("Opção Inválida, aperte qualquer teclha para tentar novamente.");
@@ -206,7 +208,7 @@ namespace ProjetoPOO.Templates
                     } else { Console.WriteLine("Nenhum cliente encontrado."); }
 
                     Console.WriteLine("\nPressione qualquer tecla para continuar...");
-                    Console.ReadKey();
+                    Console.ReadLine();
                     OpcoesCliente();
                     break;
 

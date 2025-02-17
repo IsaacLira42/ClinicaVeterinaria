@@ -9,6 +9,10 @@ namespace ProjetoPOO.Models
         public int IdPet { get; set; }
         public int IdServico { get; set; }
 
+        public Agendamento()
+        {
+            
+        }
         public Agendamento(int id, DateTime data, int idCliente, int idpet, int idServico)
         {
             Id = id;
@@ -17,5 +21,11 @@ namespace ProjetoPOO.Models
             IdPet = idpet;
             IdServico = idServico;
         }
+
+        public override string ToString()
+        {
+            return $"ID: {Id} | Data: {Data:dd/MM/yyyy HH:mm} | Cliente: {IdCliente} | Pet: {IdPet} | Serviço: {IdServico}";
+        }
+
     }
 }

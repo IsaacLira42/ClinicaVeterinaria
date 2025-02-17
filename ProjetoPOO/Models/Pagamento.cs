@@ -9,6 +9,8 @@ namespace ProjetoPOO.Models
         public int IdFuncionario { get; set; }
         public int IdCliente { get; set; }
 
+        public Pagamento() { }
+
         public Pagamento(int id, float valor, DateTime dataPagamento, int idFuncionario, int idCliente)
         {
             Id = id;
@@ -16,6 +18,11 @@ namespace ProjetoPOO.Models
             DataPagamento = dataPagamento;
             IdFuncionario = idFuncionario;
             IdCliente = idCliente;          
+        }
+
+        public override string ToString()
+        {
+            return $"ID: {Id} | Valor: {Valor:C} | Data: {DataPagamento:dd/MM/yyyy HH:mm} | Funcionário: {IdFuncionario} | Cliente: {IdCliente}";
         }
     }
 }

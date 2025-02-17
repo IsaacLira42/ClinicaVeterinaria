@@ -29,7 +29,10 @@ namespace ProjetoPOO.Templates
             switch (escolha)
             {
                 case 1: OpcoesAdmin(); break;
-
+                case 2: OpcoesCliente(); break;
+                case 3: OpcoesFuncionario(); break;
+                case 4: OpcoesPagamento(); break;
+                case 5: OpcoesAgendamento(); break;
                 default: 
                     Console.WriteLine("Opção Inválida, aperte qualquer teclha para tentar novamente.");
                     Console.ReadLine();
@@ -82,11 +85,40 @@ namespace ProjetoPOO.Templates
                     int id = int.Parse(Console.ReadLine());
                     View.RemoverEntidade<Admin>(id);
                     break;
-                case 3: View.ListarEntidade<Admin>(); break;
-                case 4: 
-                    Console.Write("Digite o Id do admin: ");
+                case 3: // Listar todos os administradores
+                    var admins = View.ListarEntidade<Admin>(); // Obtém a lista de administradores
+
+                    if (admins.Any()) // Verifica se há administradores na lista
+                    {
+                        Console.WriteLine("Lista de Administradores:");
+                        foreach (var admin in admins)
+                        {
+                            Console.WriteLine($"ID: {admin.Id} | Nome: {admin.Nome} | Email: {admin.Email}");
+                        }
+                    } else { Console.WriteLine("Nenhum administrador encontrado."); }
+
+                    Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                    Console.ReadKey();
+                    OpcoesAdmin();
+                    break;
+                case 4: // Listar administrador por ID
+                    Console.Write("Digite o Id do Administrador: ");
                     int id_2 = int.Parse(Console.ReadLine());
-                    View.ListarEntidadePorId<Admin>(id_2);
+
+                    var adminEncontrado = View.ListarEntidade<Admin>().FirstOrDefault(a => a.Id == id_2);
+
+                    if (adminEncontrado != null)
+                    {
+                        Console.WriteLine($"ID: {adminEncontrado.Id} | Nome: {adminEncontrado.Nome} | Email: {adminEncontrado.Email}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Administrador não encontrado.");
+                    }
+
+                    Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                    Console.ReadKey();
+                    OpcoesAdmin();
                     break;
                 case 5: 
                     Console.Write("Id: ");
@@ -111,7 +143,6 @@ namespace ProjetoPOO.Templates
                     break;
             }
         }
-
         public static void OpcoesCliente()
         {
             Console.Clear();
@@ -162,12 +193,43 @@ namespace ProjetoPOO.Templates
                     int id = int.Parse(Console.ReadLine());
                     View.RemoverEntidade<Cliente>(id);
                     break;
-                case 3: View.ListarEntidade<Cliente>(); break;
-                case 4: 
+                case 3: // Listar todos os clientes
+                    var clientes = View.ListarEntidade<Cliente>(); // Obtém a lista de clientes
+
+                    if (clientes.Any()) // Verifica se há clientes na lista
+                    {
+                        Console.WriteLine("Lista de Clientes:");
+                        foreach (var cliente in clientes)
+                        {
+                            Console.WriteLine($"ID: {cliente.Id} | Nome: {cliente.Nome} | Telefone: {cliente.Telefone} | Endereço: {cliente.Endereco}");
+                        }
+                    } else { Console.WriteLine("Nenhum cliente encontrado."); }
+
+                    Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                    Console.ReadKey();
+                    OpcoesCliente();
+                    break;
+
+                case 4: // Listar cliente por ID
                     Console.Write("Digite o Id do Cliente: ");
                     int id_2 = int.Parse(Console.ReadLine());
-                    View.ListarEntidadePorId<Cliente>(id_2);
+
+                    var clienteEncontrado = View.ListarEntidade<Cliente>().FirstOrDefault(c => c.Id == id_2);
+
+                    if (clienteEncontrado != null)
+                    {
+                        Console.WriteLine($"ID: {clienteEncontrado.Id} | Nome: {clienteEncontrado.Nome} | Telefone: {clienteEncontrado.Telefone} | Endereço: {clienteEncontrado.Endereco}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Cliente não encontrado.");
+                    }
+
+                    Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                    Console.ReadKey();
+                    OpcoesCliente();
                     break;
+
                 case 5: 
                     Console.Write("Id: ");
                     int id_atualizar = int.Parse(Console.ReadLine());
@@ -197,7 +259,6 @@ namespace ProjetoPOO.Templates
                     break;
             }
         }
-
         public static void OpcoesFuncionario()
         {
             Console.Clear();
@@ -249,12 +310,43 @@ namespace ProjetoPOO.Templates
                     int id = int.Parse(Console.ReadLine());
                     View.RemoverEntidade<Funcionario>(id);
                     break;
-                case 3: View.ListarEntidade<Funcionario>(); break;
-                case 4: 
-                    Console.Write("Digite o Id do Funcionario: ");
-                    int id_2 = int.Parse(Console.ReadLine());
-                    View.ListarEntidadePorId<Funcionario>(id_2);
+                case 3: // Listar todos os funcionários
+                    var funcionarios = View.ListarEntidade<Funcionario>(); // Obtém a lista de funcionários
+
+                    if (funcionarios.Any()) // Verifica se há funcionários na lista
+                    {
+                        Console.WriteLine("Lista de Funcionários:");
+                        foreach (var funcionario in funcionarios)
+                        {
+                            Console.WriteLine($"ID: {funcionario.Id} | Nome: {funcionario.Nome} | Cargo: {funcionario.Cargo} | Salário: {funcionario.Salario}");
+                        }
+                    } else { Console.WriteLine("Nenhum funcionário encontrado."); }
+
+                    Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                    Console.ReadKey();
+                    OpcoesFuncionario();
                     break;
+
+                case 4: // Listar funcionário por ID
+                    Console.Write("Digite o Id do Funcionário: ");
+                    int id_2 = int.Parse(Console.ReadLine());
+
+                    var funcionarioEncontrado = View.ListarEntidade<Funcionario>().FirstOrDefault(f => f.Id == id_2);
+
+                    if (funcionarioEncontrado != null)
+                    {
+                        Console.WriteLine($"ID: {funcionarioEncontrado.Id} | Nome: {funcionarioEncontrado.Nome} | Cargo: {funcionarioEncontrado.Cargo} | Salário: {funcionarioEncontrado.Salario}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Funcionário não encontrado.");
+                    }
+
+                    Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                    Console.ReadKey();
+                    OpcoesFuncionario();
+                    break;
+
                 case 5: 
                     Console.Write("Id: ");
                     int id_atualizar = int.Parse(Console.ReadLine());
@@ -284,7 +376,6 @@ namespace ProjetoPOO.Templates
                     break;
             }
         }
-    
         public static void OpcoesPagamento()
         {
             Console.Clear();
@@ -309,10 +400,23 @@ namespace ProjetoPOO.Templates
                     ShowMenuAdmin();
                     break;
 
-                case 1: 
-                    View.ListarEntidade<Pagamento>(); 
+                case 1:
+                    var pagamentos = View.ListarEntidade<Pagamento>(); // Obtém a lista de pagamentos
+
+                    if (pagamentos.Any()) // Verifica se há pagamentos na lista
+                    {
+                        Console.WriteLine("Lista de Pagamentos:");
+                        foreach (var pagamento in pagamentos)
+                        {
+                            Console.WriteLine($"ID: {pagamento.Id} | Cliente: {pagamento.IdCliente} | Valor: {pagamento.Valor} | Data: {pagamento.DataPagamento}");
+                        }
+                    } else { Console.WriteLine("Nenhum pagamento encontrado.");}
+
+                    Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                    Console.ReadKey();
+                    OpcoesPagamento();
                     break;
-                    
+                 
                 case 2: 
                     Console.Write("Digite o Id do Cliente: ");
                     int id = int.Parse(Console.ReadLine());
@@ -342,7 +446,254 @@ namespace ProjetoPOO.Templates
                     break;
             }
         }
-    
-        
+        public static void OpcoesAgendamento()
+        {
+            Console.Clear();
+
+            Console.WriteLine("====== Opções de Agendamento ======");
+            Console.WriteLine("|                                 |");
+            Console.WriteLine("|  1. Listar Agendamentos         |");
+            Console.WriteLine("|  2. Listar Por ID do Cliente    |");
+            Console.WriteLine("|  0. Voltar                      |");
+            Console.WriteLine("|                                 |");
+            Console.WriteLine("==================================");
+            Console.WriteLine(); // Pular linha
+
+            Console.Write("Digite a sua escolha: ");
+            int escolha = int.Parse(Console.ReadLine());
+
+            Console.Clear();
+
+            switch (escolha)
+            {
+                case 0:
+                    ShowMenuAdmin();
+                    break;
+
+                case 1:
+                    var agendamentos = View.ListarEntidade<Agendamento>(); // Obtém a lista de agendamentos
+
+                    if (agendamentos.Any()) // Verifica se há agendamentos na lista
+                    {
+                        Console.WriteLine("Lista de Agendamentos:");
+                        foreach (var agendamento in agendamentos)
+                        {
+                            Console.WriteLine($"ID: {agendamento.Id} | Cliente: {agendamento.IdCliente} | Pet: {agendamento.IdPet} | Serviço: {agendamento.IdServico} | Data: {agendamento.Data}");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Nenhum agendamento encontrado.");
+                    }
+
+                    Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                    Console.ReadKey();
+                    OpcoesAgendamento();
+                    break;
+
+                case 2:
+                    Console.Write("Digite o Id do Cliente: ");
+                    int id = int.Parse(Console.ReadLine());
+
+                    var listaAgendamentos = View.ListarEntidade<Agendamento>(); // Retorna uma lista do tipo Agendamento
+
+                    var agendamentosFiltrados = listaAgendamentos.Where(a => a.IdCliente == id).ToList();
+
+                    if (agendamentosFiltrados.Count > 0)
+                    {
+                        Console.WriteLine($"Agendamentos do Cliente {id}:");
+                        foreach (var agendamento in agendamentosFiltrados)
+                        {
+                            Console.WriteLine($"ID: {agendamento.Id} | Pet: {agendamento.IdPet} | Serviço: {agendamento.IdServico} | Data: {agendamento.Data}");
+                        }
+                    } else { Console.WriteLine("Nenhum agendamento encontrado para este cliente."); }
+
+                    Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                    Console.ReadKey();
+                    OpcoesAgendamento();
+                    break;
+
+                default:
+                    Console.WriteLine("Opção Inválida, aperte qualquer tecla para tentar novamente.");
+                    Console.ReadLine();
+                    OpcoesAgendamento();
+                    break;
+            }
+        }
+        public static void OpcoesPet()
+        {
+            Console.Clear();
+
+            Console.WriteLine("====== Opções de Pet ======");
+            Console.WriteLine("|                          |");
+            Console.WriteLine("|  1. Listar Pets          |");
+            Console.WriteLine("|  2. Listar Por ID        |");
+            Console.WriteLine("|  0. Voltar               |");
+            Console.WriteLine("|                          |");
+            Console.WriteLine("==========================");
+            Console.WriteLine(); // Pular linha
+
+            Console.Write("Digite a sua escolha: ");
+            int escolha = int.Parse(Console.ReadLine());
+
+            Console.Clear();
+
+            switch (escolha)
+            {
+                case 0:
+                    ShowMenuAdmin();
+                    break;
+
+                case 1:
+                    var pets = View.ListarEntidade<Pet>(); // Obtém a lista de pets
+
+                    if (pets.Any()) // Verifica se há pets na lista
+                    {
+                        Console.WriteLine("Lista de Pets:");
+                        foreach (var pet in pets)
+                        {
+                            Console.WriteLine($"ID: {pet.Id} | Nome: {pet.Nome} | Espécie: {pet.Especie} | Raça: {pet.Raca}");
+                        }
+                    } else { Console.WriteLine("Nenhum pet encontrado."); }
+
+                    Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                    Console.ReadKey();
+                    OpcoesPet();
+                    break;
+
+                case 2:
+                    Console.Write("Digite o Id do Pet: ");
+                    int id = int.Parse(Console.ReadLine());
+
+                    var listaPets = View.ListarEntidade<Pet>(); // Retorna uma lista do tipo Pet
+
+                    var petsFiltrados = listaPets.Where(p => p.Id == id).ToList();
+
+                    if (petsFiltrados.Count > 0)
+                    {
+                        Console.WriteLine($"Dados do Pet {id}:");
+                        foreach (var pet in petsFiltrados)
+                        {
+                            Console.WriteLine($"ID: {pet.Id} | Nome: {pet.Nome} | Espécie: {pet.Especie} | Raça: {pet.Raca}");
+                        }
+                    } else { Console.WriteLine("Nenhum pet encontrado com este ID."); }
+
+                    Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                    Console.ReadKey();
+                    OpcoesPet();
+                    break;
+
+                default:
+                    Console.WriteLine("Opção Inválida, aperte qualquer tecla para tentar novamente.");
+                    Console.ReadLine();
+                    OpcoesPet();
+                    break;
+            }
+        }
+        public static void OpcoesServico()
+        {
+            Console.Clear();
+
+            Console.WriteLine("====== Opções de Serviço ======");
+            Console.WriteLine("|                               |");
+            Console.WriteLine("|  1. Inserir Serviço           |");
+            Console.WriteLine("|  2. Remover Serviço           |");
+            Console.WriteLine("|  3. Listar Serviços           |");
+            Console.WriteLine("|  4. Listar Por ID             |");
+            Console.WriteLine("|  5. Atualizar Serviço         |");
+            Console.WriteLine("|  0. Voltar                    |");
+            Console.WriteLine("|                               |");
+            Console.WriteLine("================================");
+            Console.WriteLine(); // Pular linha
+
+            Console.Write("Digite a sua escolha: ");
+            int escolha = int.Parse(Console.ReadLine());
+
+            Console.Clear();
+
+            switch (escolha)
+            {
+                case 0:
+                    ShowMenuAdmin();
+                    break;
+                case 1:
+                    Console.Write("Nome: ");
+                    string nome = Console.ReadLine();
+
+                    Console.Write("Descrição: ");
+                    string descricao = Console.ReadLine();
+
+                    Console.Write("Preço: ");
+                    float preco = float.Parse(Console.ReadLine());
+
+                    Servico novoServico = new Servico(0, nome, descricao, preco);
+                    View.InserirEntidade<Servico>(novoServico);
+                    break;
+                case 2:
+                    Console.Write("Digite o Id do Serviço: ");
+                    int idRemover = int.Parse(Console.ReadLine());
+                    View.RemoverEntidade<Servico>(idRemover);
+                    break;
+                case 3:
+                    var servicos = View.ListarEntidade<Servico>();
+
+                    if (servicos.Any())
+                    {
+                        Console.WriteLine("Lista de Serviços:");
+                        foreach (var servico in servicos)
+                        {
+                            Console.WriteLine($"ID: {servico.Id} | Nome: {servico.Nome} | Preço: {servico.Preco:C} | Descrição: {servico.Descricao}");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Nenhum serviço encontrado.");
+                    }
+
+                    Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                    Console.ReadKey();
+                    OpcoesServico();
+                    break;
+                case 4:
+                    Console.Write("Digite o Id do Serviço: ");
+                    int idBuscar = int.Parse(Console.ReadLine());
+                    var servicoEncontrado = View.ListarEntidade<Servico>().FirstOrDefault(s => s.Id == idBuscar);
+
+                    if (servicoEncontrado != null)
+                    {
+                        Console.WriteLine($"ID: {servicoEncontrado.Id} | Nome: {servicoEncontrado.Nome} | Preço: {servicoEncontrado.Preco:C} | Descrição: {servicoEncontrado.Descricao}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Serviço não encontrado.");
+                    }
+
+                    Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                    Console.ReadKey();
+                    OpcoesServico();
+                    break;
+                case 5:
+                    Console.Write("Id: ");
+                    int idAtualizar = int.Parse(Console.ReadLine());
+
+                    Console.Write("Nome: ");
+                    string nomeAtualizar = Console.ReadLine();
+
+                    Console.Write("Descrição: ");
+                    string descricaoAtualizar = Console.ReadLine();
+
+                    Console.Write("Preço: ");
+                    float precoAtualizar = float.Parse(Console.ReadLine());
+
+                    Servico servicoAtualizado = new Servico(idAtualizar, nomeAtualizar, descricaoAtualizar, precoAtualizar);
+                    View.AtualizarEntidade<Servico>(servicoAtualizado);
+                    break;
+                default:
+                    Console.WriteLine("Opção Inválida, aperte qualquer tecla para tentar novamente.");
+                    Console.ReadLine();
+                    OpcoesServico();
+                    break;
+            }
+        }
     }
 }

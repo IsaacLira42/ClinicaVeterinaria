@@ -23,16 +23,16 @@ namespace ProjetoPOO
             persistencia.Excluir(id);
         }
 
-        public static void ListarEntidade<T>() where T : ModeloId
+        public static List<T> ListarEntidade<T>() where T : ModeloId
         {
             var persistencia = new PersistenciaGenerica<T>();
-            persistencia.Listar();  // ira retornar uma lista
+            return persistencia.Listar();  // ira retornar uma lista
         }
 
-        public static void ListarEntidadePorId<T>(int id) where T : ModeloId
+        public static T ListarEntidadePorId<T>(int id) where T : ModeloId
         {
             var persistencia = new PersistenciaGenerica<T>();
-            persistencia.ListarPorId(id);
+            return persistencia.ListarPorId(id);
         }
 
         public static void AtualizarEntidade<T>(T obj) where T : ModeloId

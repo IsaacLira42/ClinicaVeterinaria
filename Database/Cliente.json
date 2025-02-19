@@ -1,11 +1,20 @@
 [
-  {
-    "Telefone": "1234567",
-    "Endereco": "qwerty",
-    "Nome": "cliente 1",
-    "Email": "email",
-    "Senha": "1234",
-    "NivelAcesso": 1,
-    "Id": 1
-  }
+    {
+        "Telefone": "1234567",
+        "Endereco": "qwerty",
+        "Nome": "cliente 1",
+        "Email": "email",
+        "Senha": "1234",
+        "NivelAcesso": 1,
+        "id": 1
+    },
+    {
+        "Id": 2,
+        "Nome": "isaac",
+        "Email": "dsdadas",
+        "Senha": "1234",
+        "NivelAcesso": 0,
+        "Telefone": "123",
+        "Endereco": "123"
+    }
 ]

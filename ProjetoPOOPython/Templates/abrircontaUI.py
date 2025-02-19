@@ -18,7 +18,7 @@ def app():
         novo_cliente = Cliente(nome=nome, email=email, senha=senha, telefone=telefone, endereco=endereco)
         persistence = GenericPersistence(CLIENT_DB_PATH)
         clientes_existentes = persistence.listar()
-        if any(c.get("email") == email for c in clientes_existentes):
+        if any(c.get("Email") == email for c in clientes_existentes):
             st.error("Já existe uma conta com este email.")
         else:
             persistence.inserir(novo_cliente)

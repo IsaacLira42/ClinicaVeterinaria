@@ -3,7 +3,7 @@ import streamlit as st
 def app():
     st.header("Área do Cliente")
     usuario = st.session_state.get("current_user", {})
-    st.write(f"Bem-vindo, {usuario.get('nome', 'Cliente')}!")
+    st.write(f"Bem-vindo, {usuario.get('Nome', 'Cliente')}!")
     st.subheader("Seus Dados:")
     st.write(usuario)
     

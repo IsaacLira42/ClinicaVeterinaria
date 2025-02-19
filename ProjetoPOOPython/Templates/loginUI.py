@@ -15,7 +15,7 @@ def app():
         clientes = persistence.listar()
         usuario_encontrado = None
         for cliente in clientes:
-            if cliente.get("email") == email and cliente.get("senha") == senha:
+            if cliente.get("Email") == email and cliente.get("Senha") == senha:
                 usuario_encontrado = cliente
                 break
         

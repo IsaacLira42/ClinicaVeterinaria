@@ -1,4 +1,5 @@
-from usuario import Usuario
+from Models.usuario import Usuario
+
 
 class Funcionario(Usuario):
     def __init__(self, id: int = 0, nome: str = "", email: str = "", senha: str = "", nivel: int = 0, cargo: str = "", salario: float = 0.0):

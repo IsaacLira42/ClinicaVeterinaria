@@ -1,4 +1,5 @@
-from modeloId import ModeloId
+from Models.modeloId import ModeloId
+
 
 class Servico(ModeloId):
     def __init__(self, id: int = 0, nome: str = "", descricao: str = "", preco: float = 0.0):

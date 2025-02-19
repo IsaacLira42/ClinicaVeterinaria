@@ -1,5 +1,6 @@
-from modeloId import ModeloId
-from datetime import datetime
+import datetime
+from Models.modeloId import ModeloId
+
 
 class Pagamento(ModeloId):
     def __init__(self, id: int = 0, valor: float = 0.0, data_pagamento: datetime = None, id_funcionario: int = 0, id_cliente: int = 0):

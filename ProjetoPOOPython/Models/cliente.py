@@ -1,10 +1,30 @@
-from usuario import Usuario
+from Models.usuario import Usuario
 
 class Cliente(Usuario):
-    def __init__(self, id: int = 0, nome: str = "", email: str = "", senha: str = "", nivel: int = 0, telefone: str = "", endereco: str = ""):
-        super().__init__(id, nome, email, senha, nivel)
-        self.telefone = telefone
-        self.endereco = endereco
+    def __init__(self, id, nome, email, senha, nivel, telefone, endereco):
+        super().__init__(id, nome, email, senha, nivel)  # Passando id para a classe pai (Usuario)
+        self.Telefone = telefone
+        self.Endereco = endereco
 
-    def __str__(self):
-        return f"ID: {self.id} | Nome: {self.nome} | Email: {self.email} | Telefone: {self.telefone} | Endereço: {self.endereco}"
+    @classmethod
+    def from_dict(cls, data):
+        return cls(
+            id=data.get("Id", 0),  # Usando "Id" no JSON, mas mapeando para o atributo id
+            nome=data.get("Nome", ""),
+            email=data.get("Email", ""),
+            senha=data.get("Senha", ""),
+            nivel=data.get("NivelAcesso", 0),
+            telefone=data.get("Telefone", ""),
+            endereco=data.get("Endereco", "")
+        )
+
+    def to_dict(self):
+        return {
+            "Id": self.id,               # Acessando corretamente self.id
+            "Nome": self.Nome,
+            "Email": self.Email,
+            "Senha": self.Senha,
+            "NivelAcesso": self.Nivel,    # Usando "NivelAcesso" conforme o formato esperado
+            "Telefone": self.Telefone,
+            "Endereco": self.Endereco
+        }

@@ -1,12 +1,19 @@
-from modeloId import ModeloId
+from Models.modeloId import ModeloId
 
 class Usuario(ModeloId):
     def __init__(self, id: int = 0, nome: str = "", email: str = "", senha: str = "", nivel: int = 0):
-        super().__init__(id)
-        self.nome = nome
-        self.email = email
-        self.senha = senha
-        self.nivel_acesso = nivel
+        super().__init__(id)  # Passando id para o ModeloId
+        self.Nome = nome
+        self.Email = email
+        self.Senha = senha
+        self.Nivel = nivel
 
-    def __str__(self):
-        return f"Id: {self.id} | Nome: {self.nome} | Email: {self.email}"
+    @classmethod
+    def from_dict(cls, data):
+        return cls(
+            id=data.get("Id", 0),  # Usando "Id" conforme esperado no JSON
+            nome=data.get("Nome", ""),
+            email=data.get("Email", ""),
+            senha=data.get("Senha", ""),
+            nivel=data.get("NivelAcesso", 0)
+        )

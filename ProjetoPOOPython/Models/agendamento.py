@@ -1,5 +1,5 @@
-from datetime import datetime
-from modeloId import ModeloId
+import datetime
+from Models.modeloId import ModeloId
 
 class Agendamento(ModeloId):
     def __init__(self, id: int = 0, data: datetime = None, id_cliente: int = 0, id_pet: int = 0, id_servico: int = 0, id_funcionario: int = 0):

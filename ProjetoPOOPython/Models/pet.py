@@ -1,4 +1,6 @@
-from modeloId import ModeloId
+
+from Models.modeloId import ModeloId
+
 
 class Pet(ModeloId):
     def __init__(self, id: int = 0, nome: str = "", especie: str = "", raca: str = ""):

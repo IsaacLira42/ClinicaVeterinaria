@@ -12,6 +12,6 @@ if "pagina" not in st.session_state:
 if st.session_state.cliente:
     clienteUI.area_cliente()
 elif st.session_state.pagina == "cadastro":
-    abrircontaUI.cadastro()
+    abrircontaUI.AbrirConta()
 else:
     loginUI.login()

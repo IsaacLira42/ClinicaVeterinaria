@@ -13,8 +13,8 @@ def login():
             st.session_state.cliente = cliente
             st.success(f"Bem-vindo, {cliente.nome}!")
             st.session_state.pagina = "area_cliente"
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.warning("Conta não encontrada! Cadastre-se para acessar.")
             st.session_state.pagina = "cadastro"
-            st.experimental_rerun()
+            st.rerun()

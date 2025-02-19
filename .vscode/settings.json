@@ -1,3 +1,7 @@
 {
-    "dotnet.defaultSolution": "ProjetoPOO.sln"
+    "dotnet.defaultSolution": "ProjetoPOO.sln",
+    "python.analysis.extraPaths": [
+        "./ProjetoPOOPython/Templates",
+        "./ProjetoPOOPython/Generics"
+    ]
 }

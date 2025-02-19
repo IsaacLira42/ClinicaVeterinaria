@@ -1,17 +1,18 @@
 import streamlit as st
-from Templates import abrircontaUI, clienteUI, loginUI
+from Templates import loginUI, abrircontaUI, clienteUI
 
-# Inicializar sessão
-if "cliente" not in st.session_state:
-    st.session_state.cliente = None
+# Inicializa o controle de sessão
+if 'logged_in' not in st.session_state:
+    st.session_state['logged_in'] = False
+    st.session_state['current_user'] = None
 
-if "pagina" not in st.session_state:
-    st.session_state.pagina = "login"
+st.title("Clínica Veterinária")
 
-# Gerenciar navegação entre páginas
-if st.session_state.cliente:
-    clienteUI.area_cliente()
-elif st.session_state.pagina == "cadastro":
-    abrircontaUI.AbrirConta()
+if st.session_state['logged_in']:
+    clienteUI.app()
 else:
-    loginUI.login()
+    pagina = st.sidebar.radio("Navegação", ("Login", "Criar Conta"))
+    if pagina == "Login":
+        loginUI.app()
+    elif pagina == "Criar Conta":
+        abrircontaUI.app()

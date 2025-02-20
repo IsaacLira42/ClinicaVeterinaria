@@ -28,9 +28,8 @@ class GenericPersistence:
 
     def inserir(self, obj):
         self.abrir()
-        # Atribui um novo id incrementado
+        # incrementa id
         obj.id = max([o.get('id', 0) for o in self.objetos], default=0) + 1
-        # Usa o método to_dict do objeto para obter o dicionário no formato correto
         self.objetos.append(obj.to_dict())
         self.salvar()
 
@@ -46,7 +45,7 @@ class GenericPersistence:
         self.abrir()
         for i, o in enumerate(self.objetos):
             if o['id'] == obj.id:
-                self.objetos[i] = obj.to_dict()  # Usa to_dict() em vez de __dict__
+                self.objetos[i] = obj.to_dict()
                 self.salvar()
                 break
 

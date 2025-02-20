@@ -1,9 +1,18 @@
 [
     {
-        "Id": 1,
         "Nome": "isaac",
         "Email": "email",
         "Senha": "senha",
+        "NivelAcesso": 0,
+        "Telefone": "12345",
+        "Endereco": "rua",
+        "id": 1
+    },
+    {
+        "Id": 2,
+        "Nome": "isaac",
+        "Email": "email2",
+        "Senha": "1234",
         "NivelAcesso": 0,
         "Telefone": "12345",
         "Endereco": "rua"

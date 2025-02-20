@@ -9,7 +9,6 @@ class Usuario(ModeloId):
         self.NivelAcesso = nivel
 
     def to_dict(self):
-        # Retorna um dicionário no formato desejado
         return {
             "Id": self.id,
             "Nome": self.Nome,

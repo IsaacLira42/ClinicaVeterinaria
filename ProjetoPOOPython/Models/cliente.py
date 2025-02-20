@@ -7,7 +7,6 @@ class Cliente(Usuario):
         self.Endereco = endereco
 
     def to_dict(self):
-        # Retorna um dicionário no formato desejado
         return {
             "Id": self.id,
             "Nome": self.Nome,

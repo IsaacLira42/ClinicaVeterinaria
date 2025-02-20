@@ -7,6 +7,10 @@ def app():
     st.subheader("Seus Dados:")
     st.write(usuario)
     
+    # Temporário
+
+
+
     if st.button("Sair"):
         st.session_state['logged_in'] = False
         st.session_state['current_user'] = None

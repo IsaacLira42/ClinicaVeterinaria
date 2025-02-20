@@ -1,7 +1,7 @@
 import streamlit as st
 from Templates import loginUI, abrircontaUI, clienteUI
 
-# Inicializa o controle de sessão
+# Começo
 if 'logged_in' not in st.session_state:
     st.session_state['logged_in'] = False
     st.session_state['current_user'] = None

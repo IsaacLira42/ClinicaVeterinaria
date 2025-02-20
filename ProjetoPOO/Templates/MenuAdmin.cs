@@ -18,6 +18,7 @@ namespace ProjetoPOO.Templates
             Console.WriteLine("|  5. Opções de Agendamento    |");
             Console.WriteLine("|  6. Opções do Pet            |");
             Console.WriteLine("|  7. Opções de Servico        |");
+            Console.WriteLine("|  0. Sair                     |");
             Console.WriteLine("|                              |");
             Console.WriteLine("================================");
             Console.WriteLine(); // Pular linha
@@ -34,6 +35,11 @@ namespace ProjetoPOO.Templates
                 case 5: OpcoesAgendamento(); break;
                 case 6: OpcoesPet(); break;
                 case 7: OpcoesServico(); break;
+                case 0: 
+                    Console.Clear();
+                    Console.WriteLine("O programa será encerrado agora.");
+                    Environment.Exit(0); 
+                    break;
                 default: 
                     Console.WriteLine("Opção Inválida, aperte qualquer teclha para tentar novamente.");
                     Console.ReadLine();

@@ -2,7 +2,6 @@ import streamlit as st
 from Models.cliente import Cliente
 from Models import persistencia
 
-CLIENT_DB_PATH = "/workspaces/ClinicaVeterinaria/Database/Cliente.json"
 
 def app():
     st.header("Criar Conta")
@@ -15,7 +14,7 @@ def app():
         submit = st.form_submit_button("Criar Conta")
     
     if submit:
-        novo_cliente = Cliente(0, nome, email, senha, telefone, endereco)
+        novo_cliente = Cliente(0, nome, email, senha, 1, telefone, endereco)
         clientes_existentes = persistencia.Clientes.Listar()
         if any(c.get("Email") == email for c in clientes_existentes):
             st.error("Já existe uma conta com este email.")

@@ -13,7 +13,7 @@ def app():
         clientes = persistencia.Clientes.Listar()
         usuario_encontrado = None
         for cliente in clientes:
-            if cliente.get("Email") == email and cliente.get("Senha") == senha:
+            if cliente.Email == email and cliente.Senha == senha:
                 usuario_encontrado = cliente
                 break
         

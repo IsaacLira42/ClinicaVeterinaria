@@ -2,8 +2,11 @@ import streamlit as st
 
 def app():
     st.header("Área do Cliente")
-    usuario = st.session_state.get("current_user", {})
-    st.write(f"Bem-vindo, {usuario.get('Nome', 'Cliente')}!")
+    usuario = st.session_state.get("current_user")  # Não use {} como default
+    if usuario:
+        st.write(f"Bem-vindo, {usuario.Nome}!")
+
+    st.write("Bem-vindo, Cliente!")
     st.subheader("Seus Dados:")
     st.write(usuario)
     

@@ -2,17 +2,18 @@ import os
 import json
 from typing import List, TypeVar, Generic, Optional, Type
 
-# Definição do tipo genérico
 T = TypeVar("T")
 
 class RepositorioJSON(Generic[T]):
     Objetos: List[T] = []
     CaminhoBase = "/workspaces/ClinicaVeterinaria/Database/"
+    NomeArquivo: str = None
 
     @classmethod
     def _CaminhoArquivo(cls) -> str:
-        """Define o caminho do arquivo JSON baseado no nome da classe."""
-        return os.path.join(cls.CaminhoBase, f"{cls.__name__}.json")
+        """Define o caminho do arquivo JSON."""
+        nome = cls.NomeArquivo if cls.NomeArquivo else cls.__name__
+        return os.path.join(cls.CaminhoBase, f"{nome}.json")
 
     @classmethod
     def Inserir(cls, obj: T) -> None:

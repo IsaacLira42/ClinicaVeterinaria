@@ -1,8 +1,9 @@
 from Models.cliente import Cliente
-from repositorioJSON import RepositorioJSON
-
+from Generics.repositorioJSON import RepositorioJSON
 
 class Clientes(RepositorioJSON[Cliente]):
+    NomeArquivo = "Cliente"
+    
     @classmethod
     def ObjetoTipo(cls):
         return Cliente

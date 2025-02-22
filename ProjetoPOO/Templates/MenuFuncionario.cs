@@ -231,7 +231,7 @@ namespace ProjetoPOO.Models
                         Console.WriteLine("Lista de Pets:");
                         foreach (var pet in pets)
                         {
-                            Console.WriteLine($"ID: {pet.Id} | Nome: {pet.Nome} | Espécie: {pet.Especie} | Raça: {pet.Raca}");
+                            Console.WriteLine($"ID: {pet.Id} | Nome: {pet.Nome} | Espécie: {pet.Especie} | Raça: {pet.Raca} | Cliente: {pet.IdCliente}");
                         }
                     } else { Console.WriteLine("Nenhum pet encontrado."); }
 
@@ -244,7 +244,7 @@ namespace ProjetoPOO.Models
                     Console.Write("Digite o Id do Pet: ");
                     int id = int.Parse(Console.ReadLine());
 
-                    var listaPets = View.ListarEntidade<Pet>(); // Retorna uma lista do tipo Pet
+                    var listaPets = View.ListarEntidade<Pet>();
 
                     var petsFiltrados = listaPets.Where(p => p.Id == id).ToList();
 
@@ -253,7 +253,7 @@ namespace ProjetoPOO.Models
                         Console.WriteLine($"Dados do Pet {id}:");
                         foreach (var pet in petsFiltrados)
                         {
-                            Console.WriteLine($"ID: {pet.Id} | Nome: {pet.Nome} | Espécie: {pet.Especie} | Raça: {pet.Raca}");
+                            Console.WriteLine($"ID: {pet.Id} | Nome: {pet.Nome} | Espécie: {pet.Especie} | Raça: {pet.Raca} | Cliente: {pet.IdCliente}");
                         }
                     } else { Console.WriteLine("Nenhum pet encontrado com este ID."); }
 

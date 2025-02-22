@@ -1,4 +1,6 @@
 import streamlit as st
+from Models import persistencia
+from Models.pet import Pet
 
 def app():
     st.header("Área do Cliente")
@@ -10,8 +12,12 @@ def app():
     st.subheader("Seus Dados:")
     st.write(usuario)
     
-    # Temporário
+    ### Temporário #######
+    
+    persistencia.Pets.Inserir(Pet(0, "Roberto", "Cachorro", "Pincher"))
 
+
+    ######################
 
 
     if st.button("Sair"):

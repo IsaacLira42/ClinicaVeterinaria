@@ -8,7 +8,6 @@ namespace ProjetoPOO.Generics
     {
         protected List<T> objetos = new List<T>();
 
-        // Criar o Caminho para o Banco de Dados!
         string caminho = Path.Combine("/workspaces/ClinicaVeterinaria/Database", $"{typeof(T).Name}.json");
 
         public void Inserir(T obj)

@@ -1,6 +1,6 @@
 import streamlit as st
-from Generics.GenericPersistence import GenericPersistence
 from Models.cliente import Cliente
+from Models import persistencia
 
 CLIENT_DB_PATH = "/workspaces/ClinicaVeterinaria/Database/Cliente.json"
 
@@ -15,11 +15,10 @@ def app():
         submit = st.form_submit_button("Criar Conta")
     
     if submit:
-        novo_cliente = Cliente(nome=nome, email=email, senha=senha, telefone=telefone, endereco=endereco)
-        persistence = GenericPersistence(CLIENT_DB_PATH)
-        clientes_existentes = persistence.listar()
+        novo_cliente = Cliente(0, nome, email, senha, telefone, endereco)
+        clientes_existentes = persistencia.Clientes.Listar()
         if any(c.get("Email") == email for c in clientes_existentes):
             st.error("Já existe uma conta com este email.")
         else:
-            persistence.inserir(novo_cliente)
+            persistencia.Clientes.Inserir(novo_cliente)
             st.success("Conta criada com sucesso! Faça login para acessar sua conta.")

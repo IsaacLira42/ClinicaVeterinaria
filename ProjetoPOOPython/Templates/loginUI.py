@@ -1,7 +1,6 @@
 import streamlit as st
-from Generics.GenericPersistence import GenericPersistence
+from Models import persistencia
 
-CLIENT_DB_PATH = "/workspaces/ClinicaVeterinaria/Database/Cliente.json"
 
 def app():
     st.header("Login")
@@ -11,8 +10,7 @@ def app():
         submit = st.form_submit_button("Entrar")
     
     if submit:
-        persistence = GenericPersistence(CLIENT_DB_PATH)
-        clientes = persistence.listar()
+        clientes = persistencia.Clientes.Listar()
         usuario_encontrado = None
         for cliente in clientes:
             if cliente.get("Email") == email and cliente.get("Senha") == senha:

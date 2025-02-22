@@ -1,18 +1,7 @@
 from Models.usuario import Usuario
 
 class Cliente(Usuario):
-    def __init__(self, id=0, nome="", email="", senha="", nivel=0, telefone="", endereco=""):
-        super().__init__(id, nome, email, senha, nivel)
-        self.Telefone = telefone
-        self.Endereco = endereco
-
-    def to_dict(self):
-        return {
-            "Id": self.id,
-            "Nome": self.Nome,
-            "Email": self.Email,
-            "Senha": self.Senha,
-            "NivelAcesso": self.NivelAcesso,
-            "Telefone": self.Telefone,
-            "Endereco": self.Endereco
-        }
+    def __init__(self, Id, Nome, Email, Senha, NivelAcesso, Telefone, Endereco):
+        super().__init__(Id, Nome, Email, Senha, NivelAcesso)
+        self.Telefone = Telefone
+        self.Endereco = Endereco

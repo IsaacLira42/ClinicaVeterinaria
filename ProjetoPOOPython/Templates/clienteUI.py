@@ -12,12 +12,12 @@ def app():
     st.subheader("Seus Dados:")
     st.write(usuario)
     
-    ### Temporário #######
+    ##### Temporário - Testes #####
     
-    persistencia.Pets.Inserir(Pet(0, "Roberto", "Cachorro", "Pincher"))
+    # persistencia.Pets.Inserir(Pet(0, ))
 
 
-    ######################
+    ###############################
 
 
     if st.button("Sair"):

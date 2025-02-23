@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "Telefone": "38129839124",
+    "Endereco": "rua",
+    "Nome": "isaac lira",
+    "Email": "email1",
+    "Senha": "4321",
+    "NivelAcesso": 1,
+    "Id": 1
+  }
+]

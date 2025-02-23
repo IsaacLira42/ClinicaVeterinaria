@@ -1,0 +1,11 @@
+[
+  {
+    "Cargo": "massagista",
+    "Salario": 10000000,
+    "Nome": "jurandir",
+    "Email": "jurandir",
+    "Senha": "123",
+    "NivelAcesso": 2,
+    "Id": 1
+  }
+]

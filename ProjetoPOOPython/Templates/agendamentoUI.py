@@ -42,7 +42,7 @@ class AgendamentoUI:
         data_agendamento = st.date_input("Escolha a Data do Agendamento", min_value=datetime.now())
         
         # Selecionar a hora do agendamento
-        hora_agendamento = st.time_input("Escolha a Hora do Agendamento", value=datetime.now().time())
+        hora_agendamento = st.time_input("Escolha a Hora do Agendamento")
 
         # Confirmar agendamento
         submit = st.button("Confirmar Agendamento")
@@ -52,8 +52,17 @@ class AgendamentoUI:
             servico = next(s for s in servicos if s.Nome == servico_nome)
             funcionario = next(f for f in funcionarios if f.Nome == funcionario_nome)
 
-            # Combinar data e hora
+            # Junta a data e hora
             data_hora_agendamento = datetime.combine(data_agendamento, hora_agendamento)
+
+            # Verificar se o horário já está ocupado para o mesmo funcionário
+            agendamentos_existentes = persistencia.Agendamentos.Listar()
+            for agendamento in agendamentos_existentes:
+                if (agendamento.IdFuncionario == funcionario.Id and
+                    agendamento.Data == data_hora_agendamento):
+                    st.error("Este horário já está ocupado. Escolha outro horário.")
+                    return  
+
 
             # Criar e salvar o agendamento com a data
             novo_agendamento = Agendamento(0, data_hora_agendamento, usuario.Id, pet.Id, servico.Id, funcionario.Id)

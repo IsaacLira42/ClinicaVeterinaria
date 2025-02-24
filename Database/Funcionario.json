@@ -7,5 +7,14 @@
     "Senha": "123",
     "NivelAcesso": 2,
     "Id": 1
+  },
+  {
+    "Cargo": "Veterinario",
+    "Salario": 100,
+    "Nome": "Guilherme",
+    "Email": "1234@gmail.com",
+    "Senha": "1234",
+    "NivelAcesso": 2,
+    "Id": 2
   }
 ]

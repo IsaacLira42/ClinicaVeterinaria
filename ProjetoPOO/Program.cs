@@ -7,6 +7,7 @@ namespace ProjetoPOO
     {
         public static void Main()
         {
+            Console.Clear();
             var login = new Login();
             login.ShowTelaLogin();
         }

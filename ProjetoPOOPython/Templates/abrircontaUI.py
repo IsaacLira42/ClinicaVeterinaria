@@ -16,7 +16,7 @@ def app():
     if submit:
         novo_cliente = Cliente(0, nome, email, senha, 1, telefone, endereco)
         clientes_existentes = persistencia.Clientes.Listar()
-        if any(c.get("Email") == email for c in clientes_existentes):
+        if any(c.Email == email for c in clientes_existentes):
             st.error("Já existe uma conta com este email.")
         else:
             persistencia.Clientes.Inserir(novo_cliente)

@@ -1,11 +1,20 @@
 [
-  {
-    "Telefone": "38129839124",
-    "Endereco": "rua",
-    "Nome": "isaac lira",
-    "Email": "email1",
-    "Senha": "4321",
-    "NivelAcesso": 1,
-    "Id": 1
-  }
+    {
+        "Id": 1,
+        "Nome": "cliente teste",
+        "Email": "cliente1@gmail.com",
+        "Senha": "1234",
+        "NivelAcesso": 1,
+        "Telefone": "4758475934",
+        "Endereco": "rua "
+    },
+    {
+        "Id": 2,
+        "Nome": "isaac",
+        "Email": "email",
+        "Senha": "senha",
+        "NivelAcesso": 1,
+        "Telefone": "123465457454",
+        "Endereco": "rauaaasd"
+    }
 ]

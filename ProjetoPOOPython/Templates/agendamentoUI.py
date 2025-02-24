@@ -73,10 +73,6 @@ class AgendamentoUI:
     def ListarAgendamentos():
         usuario = st.session_state.get("current_user")
 
-        if not usuario:
-            st.error("Você precisa estar logado para visualizar seus agendamentos.")
-            return
-
         agendamentos = persistencia.Agendamentos.Listar()
 
         meus_agendamentos = [a for a in agendamentos if a.IdCliente == usuario.Id]
@@ -90,8 +86,6 @@ class AgendamentoUI:
             pet = persistencia.Pets.ListarId(agendamento.IdPet)
             servico = persistencia.Servicos.ListarId(agendamento.IdServico)
             funcionario = persistencia.Funcionarios.ListarId(agendamento.IdFuncionario)
-
-            # Formatar data
             data_formatada = agendamento.Data.strftime('%d/%m/%Y %H:%M')
 
             with st.expander(f"📅 Agendamento para {pet.Nome} - Serviço: {servico.Nome}"):
@@ -99,3 +93,8 @@ class AgendamentoUI:
                 st.write(f"**Serviço:** {servico.Nome}")
                 st.write(f"**Funcionário:** {funcionario.Nome}")
                 st.write(f"**Data do Agendamento:** {data_formatada}")
+
+                if st.button(f"❌ Apagar Agendamento de {pet.Nome}", key=f"del_{agendamento.Id}"):
+                    persistencia.Agendamentos.Excluir(agendamento.Id)
+                    st.success("Agendamento removido com sucesso!")
+                    st.rerun()

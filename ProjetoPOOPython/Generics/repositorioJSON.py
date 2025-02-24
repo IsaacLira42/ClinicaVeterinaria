@@ -1,12 +1,13 @@
 import os
 import json
 from typing import List, TypeVar, Generic, Optional, Type
+from datetime import datetime
 
 T = TypeVar("T")
 
 class RepositorioJSON(Generic[T]):
     Objetos: List[T] = []
-    CaminhoBase = "/workspaces/ClinicaVeterinaria/Database/"
+    CaminhoBase = "/workspaces/ClinicaVeterinaria/Database"
     NomeArquivo: str = None
 
     @classmethod
@@ -78,11 +79,24 @@ class RepositorioJSON(Generic[T]):
     @staticmethod
     def _ToDict(obj: T) -> dict:
         """Converte um objeto em dicionário para salvar em JSON."""
-        return obj.__dict__
+        # Converte qualquer campo datetime em string
+        data_dict = obj.__dict__.copy()
+        for key, value in data_dict.items():
+            if isinstance(value, datetime):
+                data_dict[key] = value.strftime('%d/%m/%Y %H:%M')  # Converte para string
+        return data_dict
 
     @classmethod
     def _FromDict(cls, data: dict) -> T:
         """Cria um objeto a partir de um dicionário."""
+        # Converte qualquer campo de string de volta para datetime
+        for key, value in data.items():
+            if isinstance(value, str):
+                try:
+                    # Tenta converter de volta para datetime
+                    data[key] = datetime.strptime(value, '%d/%m/%Y %H:%M')
+                except ValueError:
+                    pass  # Se não for uma data válida, continua como string
         return cls.ObjetoTipo()(**data)  # Deve ser sobrescrito nas classes filhas
 
     @classmethod

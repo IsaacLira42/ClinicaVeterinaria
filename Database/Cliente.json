@@ -7,5 +7,14 @@
         "NivelAcesso": 1,
         "Telefone": "12345678",
         "Endereco": "rua"
+    },
+    {
+        "Id": 2,
+        "Nome": "pedro",
+        "Email": "pedro",
+        "Senha": "b6xhipDgIDF6f8C/sDGicw==",
+        "NivelAcesso": 1,
+        "Telefone": "123",
+        "Endereco": "rua"
     }
 ]

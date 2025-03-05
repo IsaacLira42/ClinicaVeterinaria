@@ -9,6 +9,9 @@ namespace ProjetoPOO.Templates
         public void ShowTelaLogin()
         {
             List<Admin> admins = View.ListarEntidade<Admin>();
+            // Caso não exista nenhum admin, é criado um com informações padrão
+            if(admins.Count == 0) { View.InserirEntidade<Admin>(new Admin(0, "admin", "admin", View.CriptografarAES("admin"), 3));}
+            
             List<Funcionario> funcionarios =  View.ListarEntidade<Funcionario>();
 
             Console.WriteLine("=== Sistema de Login ===");

@@ -84,6 +84,8 @@ namespace ProjetoPOO.Templates
                     Console.Write("Senha: ");
                     string senha = Console.ReadLine();
 
+                    senha = View.CriptografarAES(senha);   // Criptografar a senha
+
                     Admin obj = new Admin(0, nome, email, senha, 3);
                     View.InserirEntidade<Admin>(obj); 
                     break;
@@ -140,6 +142,8 @@ namespace ProjetoPOO.Templates
                     Console.Write("Senha: ");
                     string senha_atualizar = Console.ReadLine();
 
+                    senha_atualizar = View.CriptografarAES(senha_atualizar);   // Criptografar a senha
+
                     Admin obj_atualizar = new Admin(id_atualizar, nome_atualizar, email_atualizar, senha_atualizar, 3);
                     View.AtualizarEntidade<Admin>(obj_atualizar);
                     break;
@@ -185,6 +189,7 @@ namespace ProjetoPOO.Templates
 
                     Console.Write("Senha: ");
                     string senha = Console.ReadLine();
+                    senha = View.CriptografarAES(senha);   // Criptografar a senha
 
                     Console.Write("Telefone: ");
                     string telefone = Console.ReadLine();
@@ -249,6 +254,7 @@ namespace ProjetoPOO.Templates
 
                     Console.Write("Senha: ");
                     string senha_atualizar = Console.ReadLine();
+                    senha_atualizar = View.CriptografarAES(senha_atualizar);   // Criptografar a senha
 
                     Console.Write("Telefone: ");
                     string telefone_atualizar = Console.ReadLine();
@@ -302,6 +308,7 @@ namespace ProjetoPOO.Templates
 
                     Console.Write("Senha: ");
                     string senha = Console.ReadLine();
+                    senha = View.CriptografarAES(senha);   // Criptografar a senha
 
                     Console.Write("Cargo: ");
                     string cargo = Console.ReadLine();
@@ -366,6 +373,7 @@ namespace ProjetoPOO.Templates
 
                     Console.Write("Senha: ");
                     string senha_atualizar = Console.ReadLine();
+                    senha_atualizar = View.CriptografarAES(senha_atualizar);   // Criptografar a senha
 
                     Console.Write("Cargo: ");
                     string cargo_atualizar = Console.ReadLine();

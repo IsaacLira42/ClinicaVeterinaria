@@ -1,6 +1,7 @@
 import streamlit as st
 from Models.cliente import Cliente
 from Models import persistencia
+from view import View
 
 
 def app():
@@ -14,8 +15,9 @@ def app():
         submit = st.form_submit_button("Criar Conta")
     
     if submit:
+        senha = View.criptografar_aes(senha)   # Criptografar senha 
         novo_cliente = Cliente(0, nome, email, senha, 1, telefone, endereco)
-        clientes_existentes = persistencia.Clientes.Listar()
+        clientes_existentes = persistencia.Clientes.Listar() # Todos os clientes
         if any(c.Email == email for c in clientes_existentes):
             st.error("Já existe uma conta com este email.")
         else:

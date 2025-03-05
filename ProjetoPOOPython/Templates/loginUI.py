@@ -1,6 +1,7 @@
 import streamlit as st
 from Models import persistencia
 from Models.persistencia import RepositorioJSON
+from view import View
 
 
 def app():
@@ -14,7 +15,7 @@ def app():
         clientes = persistencia.Clientes.Listar()
         usuario_encontrado = None
         for cliente in clientes:
-            if cliente.Email == email and RepositorioJSON.VerificarSenha(senha, cliente.Senha):
+            if cliente.Email == email and View.descriptografar_aes(cliente.Senha) == senha:
                 usuario_encontrado = cliente
                 break
         

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ProjetoPOO;
 
 namespace ProjetoPOO.Models
 {
@@ -10,8 +11,7 @@ namespace ProjetoPOO.Models
 
         public static bool Login(List<Admin> admins, List<Funcionario> funcionarios, string email, string senha)
         {
-            Usuario usuario = (Usuario?)admins.FirstOrDefault(u => u.Email == email && u.Senha == senha) ?? funcionarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
-
+            Usuario usuario = (Usuario?)admins.FirstOrDefault(u => u.Email == email && View.DescriptografarAES(u.Senha) == senha) ?? funcionarios.FirstOrDefault(u => u.Email == email && View.DescriptografarAES(u.Senha) == senha);
 
             if (usuario != null)
             {

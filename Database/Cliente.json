@@ -1,20 +1,11 @@
 [
-    {
-        "Id": 1,
-        "Nome": "nome",
-        "Email": "email",
-        "Senha": "b6xhipDgIDF6f8C/sDGicw==",
-        "NivelAcesso": 1,
-        "Telefone": "12345678",
-        "Endereco": "rua"
-    },
-    {
-        "Id": 2,
-        "Nome": "pedro",
-        "Email": "pedro",
-        "Senha": "b6xhipDgIDF6f8C/sDGicw==",
-        "NivelAcesso": 1,
-        "Telefone": "123",
-        "Endereco": "rua"
-    }
+  {
+    "Telefone": "24124324",
+    "Endereco": "rua",
+    "Nome": "cliente1",
+    "Email": "cliente1@gmail.com",
+    "Senha": "KWwdzAEF96zL4/MAVw1u7Q==",
+    "NivelAcesso": 1,
+    "Id": 1
+  }
 ]

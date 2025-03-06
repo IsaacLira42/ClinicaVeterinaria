@@ -1,9 +1,16 @@
 [
   {
     "Nome": "admin",
-    "Email": "admin",
+    "Email": "admin@gmail.com",
     "Senha": "sRYGPn0SjwDrPxDv5ZM\u002Bag==",
     "NivelAcesso": 3,
     "Id": 1
+  },
+  {
+    "Nome": "gilbert",
+    "Email": "gilbert@gmail.com",
+    "Senha": "KWwdzAEF96zL4/MAVw1u7Q==",
+    "NivelAcesso": 3,
+    "Id": 2
   }
 ]

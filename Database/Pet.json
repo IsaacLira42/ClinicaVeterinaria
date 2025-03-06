@@ -1,14 +1,7 @@
 [
     {
-        "Id": 3,
+        "Id": 1,
         "IdCliente": 1,
-        "Nome": "Toby",
-        "Especie": "Cachorro",
-        "Raca": "Pincher"
-    },
-    {
-        "Id": 4,
-        "IdCliente": 2,
         "Nome": "Gustavo",
         "Especie": "Peixe",
         "Raca": "Beta"

@@ -61,7 +61,7 @@ Antes de executar o projeto, você precisa garantir que possui as seguintes ferr
     
     Após instalar as dependências, você pode executar o projeto:
     
-    ```bash
+    ```bash+
     streamlit run ProjetoPOOPython/indexUI.py
     ```
     

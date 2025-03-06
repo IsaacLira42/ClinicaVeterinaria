@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "Cargo": "Massagista",
+    "Salario": 1E+09,
+    "Nome": "Rodolfo",
+    "Email": "rodolfo@gmail.com",
+    "Senha": "j5KObNf\u002BjzAsPMu3/4haNw==",
+    "NivelAcesso": 2,
+    "Id": 1
+  },
+  {
+    "Cargo": "Massagista",
+    "Salario": 1000000,
+    "Nome": "Ruan",
+    "Email": "ruan@gmail.com",
+    "Senha": "KWwdzAEF96zL4/MAVw1u7Q==",
+    "NivelAcesso": 2,
+    "Id": 2
+  }
+]

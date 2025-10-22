@@ -1,11 +1,20 @@
 [
-  {
-    "Telefone": "24124324",
-    "Endereco": "rua",
-    "Nome": "cliente1",
-    "Email": "cliente1@gmail.com",
-    "Senha": "KWwdzAEF96zL4/MAVw1u7Q==",
-    "NivelAcesso": 1,
-    "Id": 1
-  }
+    {
+        "Id": 1,
+        "Nome": "cliente1",
+        "Email": "cliente1@gmail.com",
+        "Senha": "KWwdzAEF96zL4/MAVw1u7Q==",
+        "NivelAcesso": 1,
+        "Telefone": "24124324",
+        "Endereco": "rua"
+    },
+    {
+        "Id": 2,
+        "Nome": "isaac",
+        "Email": "isaac",
+        "Senha": "lP1/+4CoWKuqbnntUgULYA==",
+        "NivelAcesso": 1,
+        "Telefone": "999999999",
+        "Endereco": "dfdfdfdfsdfsdfsd"
+    }
 ]

@@ -5,5 +5,12 @@
         "Nome": "Gustavo",
         "Especie": "Peixe",
         "Raca": "Beta"
+    },
+    {
+        "Id": 2,
+        "IdCliente": 2,
+        "Nome": "Altair",
+        "Especie": "Peixe",
+        "Raca": "beta"
     }
 ]

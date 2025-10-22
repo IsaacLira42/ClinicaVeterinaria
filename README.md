@@ -1,5 +1,7 @@
 # Clínica Veterinária – Projeto com Streamlit
 
+![Interface](./imagem_projeto_clinica_2.png)
+
 ## Pré-requisitos
 
 Antes de executar o projeto, certifique-se de que seu ambiente possui as seguintes ferramentas instaladas:
